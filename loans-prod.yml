@@ -1,6 +1,9 @@
 build:
   version: "1.0"
 
+app:
+  maintenance: false
+
 loans:
   message: "Hey, welcome to EazyBank loans related prod APIs "
   contactDetails:

@@ -1,6 +1,9 @@
 build:
   version: "1.0"
 
+app:
+  maintenance: false
+
 accounts:
   message: "Hey, welcome to EazyBank accounts related webhook APIs"
   contactDetails:

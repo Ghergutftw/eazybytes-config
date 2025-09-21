@@ -18,7 +18,7 @@ spring:
       ddl-auto: update
     show-sql: true
 
-# Maintenance mode property
+# Maintenance mode property for Docker
 app:
   maintenance: false
 
@@ -39,7 +39,7 @@ management:
 info:
   app:
     name: "accounts"
-    description: "Eazy Bank Accounts Application"
+    description: "Eazy Bank Accounts Application - Docker"
     version: "1.0.0"
 
 logging:

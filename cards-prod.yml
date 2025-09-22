@@ -5,7 +5,7 @@ app:
   maintenance: true
   
 cards:
-  message: "Hey, welcome to EazyBank cards related prod APIs"
+  message: "Hey, welcome to EazyBank cards related production APIs"
   contactDetails:
     name: "Sandra Harald - Product Owner"
     email: "sandra@eazybank.com"

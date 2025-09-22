@@ -5,7 +5,7 @@ app:
   maintenance: false
 
 loans:
-  message: "Hey, welcome to EazyBank loans related prod APIs "
+  message: "Hey, welcome to EazyBank loans related production APIs "
   contactDetails:
     name: "Pelias Sudhir - Product Owner"
     email: "pelias@eazybank.com"

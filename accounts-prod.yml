@@ -3,11 +3,6 @@ build:
 
 app:
   maintenance: false
-
-
-spring:
-  config:
-    import: configserver:http://configserver:8071/
     
 accounts:
   message: "Hey, welcome to EazyBank accounts related production API"

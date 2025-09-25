@@ -2,7 +2,7 @@ build:
   version: "3.1"
 
 accounts:
-  message: "Welcome to EazyBank accounts related Bianca APIs"
+  message: "Welcome to EazyBank accounts related ABOBA APIs"
   contactDetails:
     name: "John Doe Big Boss - Developer"
     email: "john@eazybank.com"

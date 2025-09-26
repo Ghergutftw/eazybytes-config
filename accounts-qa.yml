@@ -2,6 +2,9 @@
 build:
   version: "3.0"
 
+server:
+  port: 8080
+  
 # Database configuration
 spring:
   datasource:
@@ -31,7 +34,7 @@ rabbitmq:
 eureka:
   instance:
     prefer-ip-address: true
-    hostname: accounts-ms
+    hostname: accounts
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 30
   client:
@@ -68,7 +71,7 @@ management:
 
 # Business configuration
 accounts:
-  message: "Welcome to EazyBank accounts related Docker APIs"
+  message: "Welcome to EazyBank accounts related qa Docker APIs"
   max-transaction-limit: 50000
   allowed-currencies: "USD,EUR,GBP"
   feature-flags:

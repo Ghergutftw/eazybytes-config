@@ -1,7 +1,7 @@
 # Config Server accounts.yml - All configuration managed centrally
 build:
   version: "3.0"
-  
+
 server:
   port: 8090
 # Database configuration
@@ -23,11 +23,11 @@ spring:
     default-property-inclusion: NON_NULL
 
 # Message queue configuration
-rabbitmq:
-  host: rabbitmq
-  port: 5672
-  username: guest
-  password: guest
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
 
 # Service discovery configuration
 eureka:

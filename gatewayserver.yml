@@ -6,10 +6,13 @@ spring:
     name: gatewayserver
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true        # Enable automatic route creation from Eureka services
-          lower-case-service-id: true
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true        # Enable automatic route creation from Eureka services
+                                   # May interfire with /actuator/gateway/routes endpoint
+              lower-case-service-id: true
 
 eureka:
   client:

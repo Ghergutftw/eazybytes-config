@@ -93,12 +93,6 @@ logging:
     org.springframework.web: WARN
     root: INFO
 
-feign:
-  client:
-    loans:
-      url: http://loans:8090
-    cards:
-      url: http://cards:9000
 info:
   app:
     name: "accounts"

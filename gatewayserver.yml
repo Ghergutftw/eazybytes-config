@@ -1,30 +1,32 @@
 server:
   port: 8072
 
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: "http://eurekaserver:8070/eureka/"
 spring:
+  application:
+    name: gatewayserver
   cloud:
     gateway:
       discovery:
         locator:
-          enabled: false
-          lowerCaseServiceId: true
+          enabled: true        # Enable automatic route creation from Eureka services
+          lower-case-service-id: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: "http://eurekaserver:8761/eureka/"
+  instance:
+    prefer-ip-address: true
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
-  endpoint:
+        include: "*"          # Expose all actuator endpoints
     gateway:
-      access: unrestricted
+      access: unrestricted   # Allow unrestricted access to gateway actuator
   info:
     env:
       enabled: true
@@ -37,6 +39,5 @@ info:
 
 logging:
   level:
-    com:
-      eazybytes:
-        gatewayserver: DEBUG
+    com.eazybytes.gatewayserver: DEBUG
+    org.springframework.cloud.gateway: INFO   # Optional: see gateway logs

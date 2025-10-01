@@ -87,10 +87,6 @@ loans:
 logging:
   level:
     com.eazybytes.loans: DEBUG
-    com.eazybank: INFO
-    com.netflix.eureka: WARN
-    org.springframework.web: WARN
-    root: INFO
 
 # External service URLs (container networking)
 external-apis:

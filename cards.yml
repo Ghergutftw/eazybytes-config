@@ -88,7 +88,7 @@ cards:
 # Logging configuration
 logging:
   level:
-    com.eazybytes.cards: DEBUG
+    com.eazybytes.cards: INFO
 
 # External service URLs (container networking)
 external-apis:

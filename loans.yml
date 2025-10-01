@@ -86,7 +86,7 @@ loans:
 # Logging configuration
 logging:
   level:
-    com.eazybytes.loans: DEBUG
+    com.eazybytes.loans: INFO
 
 # External service URLs (container networking)
 external-apis:

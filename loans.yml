@@ -86,6 +86,7 @@ loans:
 # Logging configuration
 logging:
   level:
+    com.eazybytes.accounts: DEBUG
     com.eazybank: INFO
     com.netflix.eureka: WARN
     org.springframework.web: WARN

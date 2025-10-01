@@ -12,7 +12,7 @@ spring:
             locator:
               enabled: true        # Enable automatic route creation from Eureka services
                                    # May interfire with /actuator/gateway/routes endpoint
-              lower-case-service-id: true
+              lower-case-service-id: true #Enables /accounts instead of /ACCOUNTS
 
 eureka:
   client:

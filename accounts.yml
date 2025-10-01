@@ -24,9 +24,6 @@ spring:
   jackson:
     default-property-inclusion: NON_NULL
 
-logging:
-  level:
-    com.eazybytes.accounts: DEBUG
 # Message queue configuration
   rabbitmq:
     host: rabbitmq
@@ -91,6 +88,7 @@ accounts:
 # Logging configuration
 logging:
   level:
+    com.eazybytes.accounts: DEBUG
     com.eazybank: INFO
     com.netflix.eureka: WARN
     org.springframework.web: WARN

@@ -88,7 +88,8 @@ cards:
 # Logging configuration
 logging:
   level:
-    com.eazybytes.cards: INFO
+    com.eazybytes.cards: DEBUG
+    org.springframework.web: DEBUG  # This will help see the header
 
 # External service URLs (container networking)
 external-apis:

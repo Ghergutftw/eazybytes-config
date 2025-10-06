@@ -86,7 +86,8 @@ loans:
 # Logging configuration
 logging:
   level:
-    com.eazybytes.loans: INFO
+    com.eazybytes.loans: DEBUG
+    org.springframework.web: DEBUG  # This will help see the header
 
 # External service URLs (container networking)
 external-apis:

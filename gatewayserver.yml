@@ -57,10 +57,3 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 2
         failureRateThreshold: 50
         registerHealthIndicator: true
-    instances:
-      accountsCircuitBreaker:
-        baseConfig: default
-      loansCircuitBreaker:
-        baseConfig: default
-      cardsCircuitBreaker:
-        baseConfig: default

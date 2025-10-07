@@ -6,15 +6,10 @@ spring:
     name: gatewayserver
   cloud:
     gateway:
-      server:
-        webflux:
-          discovery:
-            locator:
-              enabled: true       # Enable automatic route creation from Eureka services
-                                   # May interfire with /actuator/gateway/routes endpoint
-                                   # This enables default routers, so by making it false we stop calls that go dirrectly to /accounts, they
-                                   # first need to get matched by the Routes in the APP
-              lower-case-service-id: true #Enables /accounts instead of /ACCOUNTS
+      discovery:
+        locator:
+          enabled: true       # Enable automatic route creation from Eureka services
+          lower-case-service-id: true
 
 eureka:
   client:
@@ -29,10 +24,17 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"          # Expose all actuator endpoints
+        include: "*"
   endpoint:
+    gateway:
+      enabled: true  # ADD THIS LINE - Critical for gateway actuator endpoints
     health:
       show-details: always
+      probes:
+        enabled: true
+  health:
+    circuitbreakers:
+      enabled: true
   info:
     env:
       enabled: true
@@ -46,7 +48,8 @@ info:
 logging:
   level:
     com.eazybytes.gatewayserver: DEBUG
-    org.springframework.cloud.gateway: INFO   # Optional: see gateway logs
+    org.springframework.cloud.gateway: DEBUG
+    io.github.resilience4j: DEBUG
 
 resilience4j:
   circuitbreaker:
@@ -57,3 +60,11 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 2
         failureRateThreshold: 50
         registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+    instances:
+      accountsCircuitBreaker:
+        baseConfig: default
+      loansCircuitBreaker:
+        baseConfig: default
+      cardsCircuitBreaker:
+        baseConfig: default

@@ -1,4 +1,4 @@
-# Config Server accounts.yml - All configuration managed centrally
+# Config Server cards.yml - All configuration managed centrally
 server:
   port: 9000
 
@@ -8,17 +8,26 @@ build:
 # Database configuration
 spring:
   datasource:
-    url: jdbc:mysql://cardsdb:3306/cardsdb
+    url: jdbc:mysql://cardsdb:3306/cardsdb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
     password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 300000
+      max-lifetime: 900000
   jpa:
     show-sql: false
     hibernate:
       ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
   sql:
     init:
-      mode: always
-  
+      mode: embedded  # Changed from 'always' to 'embedded'
+      continue-on-error: true
+
   # Jackson configuration
   jackson:
     default-property-inclusion: NON_NULL
@@ -72,7 +81,7 @@ management:
 
 # Business configuration
 cards:
-  message: "Welcome to EazyBank cards related Default Docker APIs"
+  message: "Welcome to EazyBank cards related default Docker APIs"
   max-transaction-limit: 50000
   allowed-currencies: "USD,EUR,GBP"
   feature-flags:
@@ -81,26 +90,14 @@ cards:
   contactDetails:
     name: "John Doe - Developer" 
     email: "john@eazybank.com"
-  onCallSupport:
-    - (555) 555-1234
-    - (555) 523-1345
 
 # Logging configuration
 logging:
   level:
     com.eazybytes.cards: DEBUG
-    org.springframework.web: DEBUG  # This will help see the header
+    org.springframework.web: DEBUG
+    org.springframework.boot.autoconfigure.sql.init: DEBUG
 
-# External service URLs (container networking)
-external-apis:
-  fraud-detection:
-    url: http://fraud-service:8080
-    timeout: 5000
-  notification-service:
-    url: http://notification-service:8080
-    timeout: 3000
-
-# Static application metadata
 info:
   app:
     name: "cards"

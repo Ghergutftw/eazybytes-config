@@ -61,10 +61,5 @@ resilience4j:
         failureRateThreshold: 50
         registerHealthIndicator: true
         eventConsumerBufferSize: 10
-    instances:
-      accountsCircuitBreaker:
-        baseConfig: default
-      loansCircuitBreaker:
-        baseConfig: default
-      cardsCircuitBreaker:
-        baseConfig: default
+
+# CE CONFIGURARE DE KKT

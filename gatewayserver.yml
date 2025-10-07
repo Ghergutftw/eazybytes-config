@@ -10,7 +10,7 @@ spring:
         webflux:
           discovery:
             locator:
-              enabled: false       # Enable automatic route creation from Eureka services
+              enabled: true       # Enable automatic route creation from Eureka services
                                    # May interfire with /actuator/gateway/routes endpoint
                                    # This enables default routers, so by making it false we stop calls that go dirrectly to /accounts, they
                                    # first need to get matched by the Routes in the APP

@@ -46,3 +46,11 @@ logging:
   level:
     com.eazybytes.gatewayserver: DEBUG
     org.springframework.cloud.gateway: INFO   # Optional: see gateway logs
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10
+      waitDurationInOpenState: 1000
+      permittedNumberOfCallsInHalfOpenState: 2
+      failureRateThreshold: 50

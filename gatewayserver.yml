@@ -61,6 +61,7 @@ resilience4j:
         failureRateThreshold: 50
         registerHealthIndicator: true
         eventConsumerBufferSize: 10
+    #If you don't define any instance, the will be created internally but not shown to the actuator(Lazy Loading)
     instances:
       accountsCircuitBreaker:
         baseConfig: default

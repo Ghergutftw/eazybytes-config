@@ -104,6 +104,12 @@ info:
     version: "@project.version@"
 
 resilience4j:
+  ratelimiter:
+    configs:
+      default:
+        limit-for-period: 10
+        limit-refresh-period: 5000ms
+        timeout-duration: 1000ms
   retry:
    default:
       max-attempts: 3

@@ -97,6 +97,8 @@ logging:
     com.netflix.eureka: WARN
     org.springframework.web: WARN
     root: INFO
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
 
 # External service URLs (container networking)
 external-apis:

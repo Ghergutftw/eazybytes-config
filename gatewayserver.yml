@@ -18,7 +18,7 @@ spring:
       resourceserver:
         jwt:
         # Download a public key from the authorization server to validate JWT tokens
-          jwk-set-uri: http://keycloak:7080/realms/master/protocol/openid-connect/certs
+          jwk-set-uri: http://keycloak:8080/realms/master/protocol/openid-connect/certs
   # Uncomment when Redis is available
   # data:
   #   redis:

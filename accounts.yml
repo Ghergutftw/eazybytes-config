@@ -5,6 +5,9 @@ server:
   port: 8080
 
 spring:
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
   cloud:
     functions:
       definition: updateCommunication

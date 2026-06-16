@@ -9,6 +9,7 @@ spring:
     functions:
       definition: updateCommunication
     stream:
+      default-binder: kafka
       bindings:
         updateCommunication-in-0:
           destination: communication-sent
